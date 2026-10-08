@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorin Daniel Micu — Profesor universitar, Matematică</title>
+<meta name="description" content="Pagina personală a Prof. Sorin Daniel Micu, Universitatea din Craiova — controlul ecuațiilor cu derivate parțiale, analiză numerică.">
+<style>
+  :root{
+    --bg:#ffffff;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --accent:#1e40af;
+    --accent-light:#eff6ff;
+    --border:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Georgia','Times New Roman',serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.65;
+    font-size:17px;
+  }
+  header{
+    background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 100%);
+    color:#fff;
+    padding:3rem 1.5rem 2.5rem;
+  }
+  .container{max-width:960px;margin:0 auto;padding:0 1.5rem;}
+  header .container{display:flex;flex-wrap:wrap;align-items:center;gap:2rem;}
+  .photo{
+    width:150px;height:150px;border-radius:50%;
+    background:#fff;color:#1e40af;
+    display:flex;align-items:center;justify-content:center;
+    font-size:3rem;font-weight:bold;
+    border:4px solid rgba(255,255,255,0.5);
+    flex-shrink:0;
+    background-size:cover;background-position:center;
+  }
+  header h1{font-size:2rem;font-weight:700;margin-bottom:0.35rem;}
+  header .title{font-size:1.1rem;opacity:0.95;margin-bottom:0.25rem;}
+  header .affil{font-size:1rem;opacity:0.85;font-style:italic;}
+  nav{
+    background:#f9fafb;
+    border-bottom:1px solid var(--border);
+    position:sticky;top:0;z-index:10;
+  }
+  nav ul{
+    list-style:none;display:flex;flex-wrap:wrap;
+    max-width:960px;margin:0 auto;padding:0 1.5rem;
+  }
+  nav a{
+    display:block;padding:1rem 1.1rem;
+    color:var(--text);text-decoration:none;
+    font-family:sans-serif;font-size:0.95rem;font-weight:500;
+    border-bottom:3px solid transparent;
+    transition:all 0.2s;
+  }
+  nav a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  main{padding:3rem 0;}
+  section{margin-bottom:3.5rem;scroll-margin-top:70px;}
+  h2{
+    font-size:1.6rem;color:var(--accent);
+    border-bottom:2px solid var(--accent-light);
+    padding-bottom:0.5rem;margin-bottom:1.5rem;
+  }
+  h3{font-size:1.15rem;margin:1.5rem 0 0.6rem;color:#111827;}
+  p{margin-bottom:1rem;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  ul.clean{list-style:none;}
+  ul.clean li{
+    padding:0.5rem 0 0.5rem 1.5rem;
+    position:relative;
+  }
+  ul.clean li::before{
+    content:"▸";position:absolute;left:0;color:var(--accent);
+  }
+  .pub{
+    margin-bottom:1.1rem;padding-left:2.2rem;
+    text-indent:-2.2rem;
+    font-size:0.97rem;
+  }
+  .pub .num{color:var(--accent);font-weight:bold;}
+  .pub .doi{font-size:0.85rem;color:var(--muted);display:block;text-indent:0;padding-left:2.2rem;margin-top:0.15rem;}
+  .card{
+    background:var(--accent-light);
+    border-left:4px solid var(--accent);
+    padding:1.2rem 1.4rem;border-radius:4px;
+    margin-bottom:1rem;
+  }
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.2rem;margin-top:1rem;
+  }
+  .contact-item{
+    background:#f9fafb;padding:1rem 1.2rem;
+    border-radius:6px;border:1px solid var(--border);
+  }
+  .contact-item strong{display:block;color:var(--accent);margin-bottom:0.3rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;}
+  footer{
+    background:#1f2937;color:#d1d5db;
+    padding:2rem 1.5rem;text-align:center;font-size:0.9rem;
+  }
+  footer a{color:#93c5fd;}
+  @media(max-width:640px){
+    header h1{font-size:1.5rem;}
+    .photo{width:110px;height:110px;font-size:2.2rem;}
+    nav a{padding:0.8rem;}
+  }
+</style>
+<!-- MathJax pentru formule LaTeX -->
+<script>
+  MathJax = { tex: {inlineMath: [['$','$'],['\\(','\\)']]}, svg:{fontCache:'global'} };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="photo" id="profilePhoto">SM</div>
+    <div>
+      <h1>Sorin Daniel Micu</h1>
+      <div class="title">Profesor universitar &amp; Cercetător științific</div>
+      <div class="affil">Universitatea din Craiova, Facultatea de Științe<br>
+      Institutul de Statistică Matematică și Matematică Aplicată „Gheorghe Mihoc–Caius Iacob” al Academiei Române</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#acasa">Acasă</a></li>
+    <li><a href="#cercetare">Cercetare</a></li>
+    <li><a href="#publicatii">Publicații</a></li>
+    <li><a href="#predare">Predare &amp; Coordonare</a></li>
+    <li><a href="#conferinte">Conferințe</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <!-- ============ ACASĂ ============ -->
+  <section id="acasa">
+    <h2>Acasă</h2>
+    <p>Sunt profesor la <strong>Universitatea din Craiova</strong>, Facultatea de Științe, și cercetător științific la <strong>Institutul de Statistică Matematică și Matematică Aplicată „Gheorghe Mihoc–Caius Iacob”</strong> al Academiei Române.</p>
+    <p>Am obținut doctoratul în matematică aplicată la <strong>Universidad Complutense de Madrid</strong> în 1996, sub îndrumarea profesorului Enrique Zuazua Iriondo, cu teza <em>„Análisis de un sistema bidimensional fluido-estructura”</em>. Din 2009 conduc lucrări de doctorat.</p>
+    <p>Domeniul meu principal de cercetare este <strong>teoria controlului pentru ecuații cu derivate parțiale</strong>, cu accent pe controlabilitate, stabilizare și aproximare numerică a controalelor. Am publicat peste 60 de articole în reviste cotate ISI și am coordonat proiecte de cercetare naționale și internaționale.</p>
+    <p>Am fost profesor invitat la universități și centre de cercetare din Spania, Franța, Chile, Brazilia și Statele Unite, și sunt Associate Editor la <em>Acta Applicandae Mathematicae</em> și membru în Editorial Board al <em>Mathematical Control and Related Fields</em>.</p>
+  </section>
+
+  <!-- ============ CERCETARE ============ -->
+  <section id="cercetare">
+    <h2>Cercetare</h2>
+    <h3>Domenii principale</h3>
+    <ul class="clean">
+      <li><strong>Controlabilitatea ecuațiilor cu derivate parțiale</strong> — ecuația undelor, ecuația căldurii, ecuații dispersive (KdV, Boussinesq, Benjamin-Bona-Mahony, Schrödinger)</li>
+      <li><strong>Controlabilitate uniformă și comportament singular</strong> — controlabilitate cu vâscozitate care tinde la zero, limite singulare parabolice/hyperbolice</li>
+      <li><strong>Aproximarea numerică a controalelor</strong> — metode de elemente finite mixte, scheme de diferențe finite, vâscozitate numerică</li>
+      <li><strong>Control optimal în timp</strong> — proprietatea bang-bang, control optimal pentru ecuația căldurii și plăci vibrante</li>
+      <li><strong>Sisteme fluide-structură</strong> — controlul zgomotului, sisteme hibride, cuplaje fluid-structură</li>
+      <li><strong>Probleme de control cu memorie și ecuații fracționare</strong></li>
+    </ul>
+
+    <h3>Proiecte de cercetare coordonate</h3>
+    <div class="card">
+      <strong>Director — PN-II-ID-PCE-2011-3-0257</strong><br>
+      „Controlabilitate, comportament asymptotic și analiză numerică pentru procese de evoluție”, contract 136/05-10-2011, UEFISCDI, 1.334.000 Lei, 2011–2016.
+    </div>
+    <div class="card">
+      <strong>Coordonator — Proiect bilateral România–Franța nr. 206/2009</strong><br>
+      „Probleme de controlabilitate a ecuațiilor cu derivate parțiale”, cu Université Nancy I, 2009–2010.
+    </div>
+    <div class="card">
+      <strong>Coordonator — Programul Brâncuși nr. 17</strong><br>
+      „Analiza și controlul unor ecuații cu derivate parțiale de evoluție”, cu Université Nancy I, 2003–2004.
+    </div>
+  </section>
+
+  <!-- ============ PUBLICAȚII ============ -->
+  <section id="publicatii">
+    <h2>Publicații selectate</h2>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">
+      Listă completă: peste 60 de articole cotate ISI. Mai jos sunt prezentate cele mai recente și reprezentative lucrări.
+    </p>
+
+    <div class="pub"><span class="num">[1]</span> S. Micu, A. F. Pazoto, M. D. Soto Vieira: <em>Controllability for a Boussinesq system of BBM-BBM type with moving control</em>, Nonlinearity, 39(1) (2026), 015010.
+      <span class="doi">DOI: 10.1088/1361-6544/ae341d</span></div>
+
+    <div class="pub"><span class="num">[2]</span> C. Castro, S. Micu: <em>A mixed finite elements approximation of inverse source problems for the wave equation with variable coefficients using observability</em>, Numerische Mathematik, 157(5) (2025), 1847–1895.
+      <span class="doi">DOI: 10.1007/s00211-025-01489-0</span></div>
+
+    <div class="pub"><span class="num">[3]</span> S. Micu, A. F. Pazoto, M. D. S. Vieira: <em>Boundary controllability of a higher-order Boussinesq system</em>, Communications in Contemporary Mathematics, 27(6) (2025), 2450040.
+      <span class="doi">DOI: 10.1142/S0219199724500408</span></div>
+
+    <div class="pub"><span class="num">[4]</span> N. Cîndea, S. Micu, I. Roventa, M. Tudor: <em>An approximation method for exact controls of vibrating systems with numerical viscosity</em>, ESAIM: Control, Optimisation and Calculus of Variations, 30 (2024), 33.
+      <span class="doi">DOI: 10.1051/cocv/2024025</span></div>
+
+    <div class="pub"><span class="num">[5]</span> S. Micu, C. Niță: <em>Cost evaluation of finite dimensional and approximate null-controllability for the one dimensional half-heat equation</em>, Mathematical Control and Related Fields, 14(1) (2024), 1–15.
+      <span class="doi">DOI: 10.3934/mcrf.2022054</span></div>
+
+    <div class="pub"><span class="num">[6]</span> S. Micu, I. Roventa, M. Tucsnak: <em>Time optimal controls and bang-bang property for systems describing plate vibrations</em>, Systems &amp; Control Letters, 182 (2023), 105670.
+      <span class="doi">DOI: 10.1016/j.sysconle.2023.105670</span></div>
+
+    <div class="pub"><span class="num">[7]</span> S. Micu, C. Niță: <em>On a Fractional Diffusion Equation with Moving Control</em>, SIAM Journal on Control and Optimization, 60(2) (2022), 871–889.
+      <span class="doi">DOI: 10.1137/20M1385056</span></div>
+
+    <div class="pub"><span class="num">[8]</span> G. Leugering, S. Micu, I. Roventa, Y. Wang: <em>Controllability properties of a hyperbolic system with dynamic boundary conditions</em>, Journal of Evolution Equations, 22 (2022), 65.
+      <span class="doi">DOI: 10.1007/s00028-022-00823-5</span></div>
+
+    <div class="pub"><span class="num">[9]</span> G. J. Bautista, S. Micu, A. F. Pazoto: <em>On the controllability of a model system for long waves in nonlinear dispersive media</em>, Nonlinearity, 34(2) (2021), 989–1013.</div>
+
+    <div class="pub"><span class="num">[10]</span> S. Micu, I. Roventa, L. Temereancă: <em>Approximation of the controls for the wave equation with a potential</em>, Numerische Mathematik, 144(4) (2020), 835–887.
+      <span class="doi">DOI: 10.1007/s00211-020-01106-2</span></div>
+
+    <div class="pub"><span class="num">[11]</span> U. Biccari, S. Micu: <em>Null-controllability properties of the wave equation with a second order memory term</em>, Journal of Differential Equations, 267(2) (2019), 1376–1422.
+      <span class="doi">DOI: 10.1016/j.jde.2019.02.009</span></div>
+
+    <div class="pub"><span class="num">[12]</span> S. Micu, A. Pazoto: <em>Stabilization of a Boussinesq system with localized damping</em>, Journal d'Analyse Mathématique, 137(1) (2019), 291–337.
+      <span class="doi">DOI: 10.1007/s11854-018-0074-3</span></div>
+
+    <div class="pub"><span class="num">[13]</span> S. Micu, T. Takahashi: <em>Local controllability to stationary trajectories of a Burgers equation with nonlocal viscosity</em>, Journal of Differential Equations, 264(5) (2018), 3664–3703.
+      <span class="doi">DOI: 10.1016/j.jde.2017.11.029</span></div>
+
+    <div class="pub"><span class="num">[14]</span> N. Cîndea, S. Micu, I. Roventa: <em>Boundary controllability for finite-differences semi-discretizations of a clamped beam equation</em>, SIAM Journal on Control and Optimization, 55(2) (2017), 785–817.
+      <span class="doi">DOI: 10.1137/16M1076976</span></div>
+
+    <div class="pub"><span class="num">[15]</span> S. Micu, I. Roventa, L. Temereancă: <em>Approximation of the controls for the linear beam equation</em>, Mathematics of Control, Signals, and Systems, 28(2) (2016), 1–53.
+      <span class="doi">DOI: 10.1007/s00498-016-0161-x</span></div>
+
+    <div class="pub"><span class="num">[16]</span> N. Cîndea, S. Micu, I. Rovența, M. Tucsnak: <em>Particle supported control of a fluid-particle system</em>, Journal de Mathématiques Pures et Appliquées, 104(2) (2015), 311–353.
+      <span class="doi">DOI: 10.1016/j.matpur.2015.02.009</span></div>
+
+    <div class="pub"><span class="num">[17]</span> S. Micu, I. Roventa, M. Tucsnak: <em>Time optimal boundary controls for the heat equation</em>, Journal of Functional Analysis, 263(1) (2012), 25–49.</div>
+
+    <div class="pub"><span class="num">[18]</span> S. Micu, E. Zuazua: <em>On the controllability of a fractional order parabolic equation</em>, SIAM Journal on Control and Optimization, 44(6) (2006), 1950–1972.</div>
+
+    <div class="pub"><span class="num">[19]</span> S. Micu, E. Zuazua: <em>On the lack of null-controllability of the heat equation on the half-line</em>, Transactions of the AMS, 353 (2000), 1635–1659.</div>
+
+    <div class="pub"><span class="num">[20]</span> S. Micu, E. Zuazua: <em>Boundary controllability of a linear hybrid system arising in the control of noise</em>, SIAM Journal on Control and Optimization, 35 (1997), 1614–1637.</div>
+
+  </section>
+
+  <!-- ============ PREDARE ============ -->
+  <section id="predare">
+    <h2>Predare &amp; Coordonare</h2>
+    <h3>Coordonare de doctorat</h3>
+    <p>Conducere de doctorat din <strong>2009</strong>, în domeniul Matematică, la Universitatea din Craiova.</p>
+
+    <h3>Predare</h3>
+    <ul class="clean">
+      <li>Universitatea din Craiova, Facultatea de Științe — din 1992</li>
+      <li>Profesor asociat, Universidad Carlos III de Madrid (1994–1996)</li>
+      <li>Profesor asociat, Universidad Complutense de Madrid (1996–2001)</li>
+    </ul>
+
+    <h3>Profesor invitat</h3>
+    <ul class="clean">
+      <li>Universidad de Chile, CMM, Santiago de Chile (2002, 2009)</li>
+      <li>Universidad Autónoma de Madrid (2003–2007)</li>
+      <li>Universidade Federal do Rio de Janeiro (2010–2024)</li>
+      <li>Université Henri Poincaré, Nancy I (2005, 2011 — CNRS Poste Rouge)</li>
+      <li>Université Paris 7 și Université Paris 6 (2010, 2014)</li>
+      <li>Basque Center for Applied Mathematics, Bilbao (2009)</li>
+      <li>Chair of Computational Mathematics, University of Deusto, Bilbao (2018)</li>
+      <li>Université de Lorraine, Nancy (2017)</li>
+    </ul>
+
+    <h3>Editorial</h3>
+    <ul class="clean">
+      <li><strong>Associate Editor</strong> — <em>Acta Applicandae Mathematicae</em></li>
+      <li><strong>Editorial Board</strong> — <em>Mathematical Control and Related Fields</em></li>
+    </ul>
+  </section>
+
+  <!-- ============ CONFERINȚE ============ -->
+  <section id="conferinte">
+    <h2>Conferințe (selecție)</h2>
+    <ul class="clean">
+      <li><em>Inverse source problems approximation with mixed finite elements</em> — Workshop Control of PDEs and related topics, Toulouse, Franța (2025)</li>
+      <li><em>Approximation of the boundary controls for the 2D wave equation in a rectangle</em> — Workshop Control of PDEs in Hauts-de-France, Calais (2025)</li>
+      <li><em>Time optimal controls and bang-bang property for systems describing plate vibrations</em> — GAETA 2024, Gaeta, Italia</li>
+      <li><em>Controllability properties of a fractional diffusion equation</em> — IX PDE, optimal design and numerics, Benasque, Spania (2022)</li>
+      <li><em>On the controllability of the wave equation with a second order memory term</em> — VIII PDE, Benasque, Spania (2019)</li>
+      <li><em>Approximation of the exact control for the beam equation</em> — International Workshop „From Open to Closed Loop Control”, Graz, Austria (2015)</li>
+      <li><em>Time optimal boundary controls for the heat equation</em> — 9th AIMS Conference, Orlando, SUA (2012)</li>
+    </ul>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <strong>Email</strong>
+        <a href="mailto:sd_micu@yahoo.com">sd_micu@yahoo.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>Adresă</strong>
+        Universitatea din Craiova<br>
+        Facultatea de Științe<br>
+        Str. A. I. Cuza, 13<br>
+        200585 Craiova, România
+      </div>
+      <div class="contact-item">
+        <strong>Telefon / Fax</strong>
+        +40 251 412 673
+      </div>
+      <div class="contact-item">
+        <strong>ORCID</strong>
+        <!-- Înlocuiește cu ID-ul tău ORCID -->
+        <a href="#">De completat</a>
+      </div>
+      <div class="contact-item">
+        <strong>Google Scholar</strong>
+        <!-- Înlocuiește cu link-ul profilului tău -->
+        <a href="#">De completat</a>
+      </div>
+      <div class="contact-item">
+        <strong>ResearchGate</strong>
+        <a href="#">De completat</a>
+      </div>
+      <div class="contact-item">
+        <strong>MathSciNet</strong>
+        <a href="#">De completat</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Sorin Daniel Micu · Universitatea din Craiova
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
